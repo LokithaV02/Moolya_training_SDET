@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "b2ef806e-ab97-4eba-9ff6-b49cf64f0153",
+		"name": "Simplebooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30678699"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Testing{{$randomInt}}\",\r\n   \"clientEmail\": \"Testing{{$randomInt}}@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{simplebookurl}}/api-clients/"
+			},
+			"response": []
+		},
+		{
+			"name": "Submitorder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"orderidglo= pm.response.json().orderId\r",
+							"pm.globals.set(\"orderidglo\", orderidglo);\r",
+							"\r",
+							"pm.test(\"Validate if the order is created successfully\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearertoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": \"{{Bookid}}\",\r\n  \"customerName\": \"{{Customername}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "updateorder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearertoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerName\": \"{{UpdateCustomername}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/orders/{{orderidglo}}"
+			},
+			"response": []
+		},
+		{
+			"name": "getorder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"Custname= pm.response.json().customerName\r",
+							"pm.globals.set(\"Custname\", Custname);\r",
+							"\r",
+							"pm.test(\"Validate the customername is updated successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"bookid= pm.response.json().id\r",
+							"pm.globals.set(\"bookid\", bookid);\r",
+							"console.log(bookid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearertoken}}",
+						"type": "text"
+					}
+				],
+				"url": "https://simple-books-api.glitch.me/orders/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate if the order is deleted successfully\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearertoken}}",
+						"type": "text"
+					}
+				],
+				"url": "https://simple-books-api.glitch.me/orders/{{orderidglo}}"
+			},
+			"response": []
+		}
+	]
+}
