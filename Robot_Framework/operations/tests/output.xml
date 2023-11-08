@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.4 on win32)" generated="20231106 12:04:07.788" rpa="false" schemaversion="4">
+<suite id="s1" name="Demotest1" source="C:\Users\Hp\PycharmProjects\Robot_Framework\basicsrobot\tests\demotest1.robot">
+<test id="s1-t1" name="LoginTest" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231106 12:04:08.036" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<status status="PASS" starttime="20231106 12:04:08.036" endtime="20231106 12:04:13.766"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231106 12:04:13.767" endtime="20231106 12:04:13.908"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231106 12:04:13.910" endtime="20231106 12:04:16.113"/>
+</kw>
+<status status="PASS" starttime="20231106 12:04:08.035" endtime="20231106 12:04:16.114"/>
+</test>
+<status status="PASS" starttime="20231106 12:04:07.792" endtime="20231106 12:04:16.120"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demotest1">Demotest1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

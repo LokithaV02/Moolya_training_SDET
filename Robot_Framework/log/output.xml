@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.4 on win32)" generated="20231108 10:50:38.439" rpa="false" schemaversion="4">
+<suite id="s1" name="Windowhandles" source="C:\Users\Hp\PycharmProjects\Robot_Framework\operations\tests\Windowhandles.robot">
+<test id="s1-t1" name="Multiplewindowtest" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231108 10:50:38.750" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/AutomationPractice'.</msg>
+<status status="PASS" starttime="20231108 10:50:38.749" endtime="20231108 10:50:42.766"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231108 10:50:42.766" endtime="20231108 10:50:43.067"/>
+</kw>
+<kw name="Get Selenium Speed" library="SeleniumLibrary">
+<var>${speed}</var>
+<doc>Gets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20231108 10:50:43.068" level="INFO">${speed} = 0 seconds</msg>
+<status status="PASS" starttime="20231108 10:50:43.067" endtime="20231108 10:50:43.068"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${speed}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231108 10:50:43.068" endtime="20231108 10:50:43.068"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>2seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231108 10:50:43.068" endtime="20231108 10:50:43.069"/>
+</kw>
+<kw name="Alerts" library="dropdowns">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231108 10:50:48.073" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231108 10:50:43.069" endtime="20231108 10:50:48.074"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>testing123</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231108 10:50:48.077" level="INFO">${name} = testing123</msg>
+<status status="PASS" starttime="20231108 10:50:48.075" endtime="20231108 10:50:48.077"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>enter-name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231108 10:50:48.081" level="INFO">Typing text 'testing123' into text field 'enter-name'.</msg>
+<status status="PASS" starttime="20231108 10:50:48.078" endtime="20231108 10:50:54.325"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>confirmbtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231108 10:50:54.326" level="INFO">Clicking element 'confirmbtn'.</msg>
+<status status="PASS" starttime="20231108 10:50:54.325" endtime="20231108 10:50:58.404"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<var>${message}</var>
+<arg>LEAVE</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20231108 10:50:58.405" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg timestamp="20231108 10:51:02.432" level="INFO">${message} = Hello testing123, Are you sure you want to confirm?</msg>
+<status status="PASS" starttime="20231108 10:50:58.404" endtime="20231108 10:51:02.433"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231108 10:51:02.434" endtime="20231108 10:51:02.436"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231108 10:51:12.445" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231108 10:51:02.436" endtime="20231108 10:51:12.447"/>
+</kw>
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<arg>${message}</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20231108 10:51:12.449" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231108 10:51:12.448" endtime="20231108 10:51:18.495"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>Accept</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20231108 10:51:18.497" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg timestamp="20231108 10:51:25.894" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231108 10:51:25.895" level="FAIL">Alert not found in 5 seconds.</msg>
+<status status="FAIL" starttime="20231108 10:51:18.496" endtime="20231108 10:51:25.902"/>
+</kw>
+<status status="FAIL" starttime="20231108 10:50:43.069" endtime="20231108 10:51:25.903"/>
+</kw>
+<status status="FAIL" starttime="20231108 10:50:38.748" endtime="20231108 10:51:25.905">Alert not found in 5 seconds.</status>
+</test>
+<status status="FAIL" starttime="20231108 10:50:38.442" endtime="20231108 10:51:25.908"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Windowhandles">Windowhandles</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
