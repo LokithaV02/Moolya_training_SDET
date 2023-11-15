@@ -1,0 +1,8 @@
+2023-11-14 22:52:56,671 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:52:57,063 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:52:57,250 :INFO : test_sort :Applying sort by selecting from dropdown
+2023-11-14 22:53:10,882 :INFO : test_product_selection :Selecting product based on search
+2023-11-14 22:53:11,938 :INFO : test_product_selection :Selecting product color
+2023-11-14 22:53:12,205 :INFO : test_product_selection :Selecting product size
+2023-11-14 22:53:23,722 :INFO : test_add_to_cart :Product added to cart
+2023-11-14 22:53:24,111 :INFO : test_add_to_cart :Proceeded to checkout successfully

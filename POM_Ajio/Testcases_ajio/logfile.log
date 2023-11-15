@@ -1,0 +1,54 @@
+2023-11-14 21:41:56,355 :INFO : test_homepage :searching for clothes
+2023-11-14 21:44:08,954 :INFO : test_homepage :searching for clothes
+2023-11-14 21:54:56,783 :INFO : test_homepage :searching for clothes
+2023-11-14 21:58:12,848 :INFO : test_homepage :searching for clothes
+2023-11-14 22:11:34,168 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:18:09,508 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:21:23,801 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:22:37,003 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:24:13,941 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:24:14,662 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:27:48,260 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:27:48,989 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:33:05,229 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:33:05,938 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:36:49,686 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:36:50,396 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:38:19,205 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:38:19,921 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:40:51,501 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:40:52,321 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:43:41,353 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:43:42,154 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:45:29,210 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:45:29,646 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:48:23,612 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:48:23,996 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:49:59,307 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-14 22:49:59,734 :INFO : test_filter :Applying filters for gender category
+2023-11-14 22:49:59,951 :INFO : test_sort :Applying sort by selecting from dropdown
+2023-11-14 22:50:13,153 :INFO : test_product_selection :Selecting product based on search
+2023-11-14 22:50:14,292 :INFO : test_product_selection :Selecting product color
+2023-11-14 22:50:14,532 :INFO : test_product_selection :Selecting product size
+2023-11-14 22:50:25,934 :INFO : test_add_to_cart :Product added to cart
+2023-11-14 22:50:26,259 :INFO : test_add_to_cart :Proceeded to checkout successfully
+2023-11-15 09:55:59,092 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-15 09:55:59,917 :INFO : test_filter :Applying filters for gender category
+2023-11-15 09:56:00,337 :INFO : test_sort :Applying sort by selecting from dropdown
+2023-11-15 09:56:14,500 :INFO : test_product_selection :Selecting product based on search
+2023-11-15 09:57:23,965 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-15 09:57:24,703 :INFO : test_filter :Applying filters for gender category
+2023-11-15 09:57:25,046 :INFO : test_sort :Applying sort by selecting from dropdown
+2023-11-15 09:57:37,236 :INFO : test_product_selection :Selecting product based on search
+2023-11-15 09:57:39,068 :INFO : test_product_selection :Selecting product color
+2023-11-15 09:57:39,454 :INFO : test_product_selection :Selecting product size
+2023-11-15 09:57:51,777 :INFO : test_add_to_cart :Product added to cart
+2023-11-15 09:57:52,401 :INFO : test_add_to_cart :Proceeded to checkout successfully
+2023-11-15 10:08:47,111 :INFO : test_homepage :searching for clothes and verifying search
+2023-11-15 10:08:47,852 :INFO : test_filter :Applying filters for gender category
+2023-11-15 10:08:48,221 :INFO : test_sort :Applying sort by selecting from dropdown
+2023-11-15 10:09:01,672 :INFO : test_product_selection :Selecting product based on search
+2023-11-15 10:09:03,482 :INFO : test_product_selection :Selecting product color
+2023-11-15 10:09:03,884 :INFO : test_product_selection :Selecting product size
+2023-11-15 10:09:16,435 :INFO : test_add_to_cart :Product added to cart
+2023-11-15 10:09:17,080 :INFO : test_add_to_cart :Proceeded to checkout successfully
