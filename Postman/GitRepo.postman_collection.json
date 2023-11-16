@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "b3509c7b-21ba-4195-aea7-ebccfaf4397e",
 		"name": "GitRepo",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30678699"
 	},
 	"item": [
@@ -27,9 +27,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [
@@ -54,7 +58,17 @@
 						}
 					}
 				},
-				"url": "{{giturl}}/orgs/{{Orggitowner}}/repos"
+				"url": {
+					"raw": "{{giturl}}/orgs/{{Orggitowner}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"orgs",
+						"{{Orggitowner}}",
+						"repos"
+					]
+				}
 			},
 			"response": []
 		},
@@ -63,9 +77,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "PATCH",
 				"header": [
@@ -89,7 +107,17 @@
 						}
 					}
 				},
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -129,7 +157,17 @@
 						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -137,10 +175,14 @@
 			"name": "Deleterepo",
 			"request": {
 				"auth": {
-					"type": "oauth2",
-					"oauth2": {
-						"addTokenTo": "header"
-					}
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "DELETE",
 				"header": [
@@ -155,7 +197,17 @@
 						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -169,14 +221,38 @@
 			"request": {
 				"auth": {
 					"type": "oauth2",
-					"oauth2": {
-						"client_authentication": "header",
-						"clientId": "a19b548e592a66801d92",
-						"clientSecret": "b3d0936c9cff026c80a1ab5380396a0eb08fb217",
-						"grant_type": "client_credentials",
-						"tokenName": "GitOauthtoken",
-						"addTokenTo": "header"
-					}
+					"oauth2": [
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "a19b548e592a66801d92",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "b3d0936c9cff026c80a1ab5380396a0eb08fb217",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "GitOauthtoken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [
@@ -195,7 +271,18 @@
 						}
 					}
 				},
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/forks"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/forks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"forks"
+					]
+				}
 			},
 			"response": []
 		},
@@ -207,21 +294,31 @@
 				}
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
-				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "{{gitaccept}}",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{gitbearertoken}}",
+						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/forks"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/forks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"forks"
+					]
+				}
 			},
 			"response": []
 		},
@@ -233,21 +330,30 @@
 				}
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
-				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "{{gitaccept}}",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{gitbearertoken}}",
+						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/users/{{Orggitowner}}/repos"
+				"url": {
+					"raw": "{{giturl}}/users/{{Orggitowner}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"users",
+						"{{Orggitowner}}",
+						"repos"
+					]
+				}
 			},
 			"response": []
 		},
@@ -259,21 +365,31 @@
 				}
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
-				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "{{gitaccept}}",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{gitbearertoken}}",
+						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/languages"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/languages",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"languages"
+					]
+				}
 			},
 			"response": []
 		},
@@ -285,21 +401,29 @@
 				}
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
-				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "{{gitaccept}}",
 						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "{{gitbearertoken}}",
+						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/repositories"
+				"url": {
+					"raw": "{{giturl}}/repositories",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repositories"
+					]
+				}
 			},
 			"response": []
 		},
@@ -310,7 +434,13 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							""
+							"shavalue = pm.response.json().content.sha\r",
+							"console.log(shavalue)\r",
+							"pm.globals.set(\"shavalue\",shavalue)\r",
+							"\r",
+							"filename = pm.response.json().content.name\r",
+							"console.log(filename)\r",
+							"pm.globals.set(\"filename\",filename)"
 						],
 						"type": "text/javascript"
 					}
@@ -324,9 +454,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "PUT",
 				"header": [
@@ -334,23 +468,57 @@
 						"key": "Accept",
 						"value": "{{gitaccept}}",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{gitbearertoken}}",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"message\":\"my commit message\",\r\n    \"committer\":{\"name\":\"testOctocat0{{$randomInt}}\",\"email\":\"octocattest@github.com\"},\r\n    \"content\":\"bXkgbmV3IGZpbGUgY29udGVudHM=\"\r\n}",
+					"raw": "{\r\n    \"message\":\"commit message\",\r\n    \"committer\":{\"name\":\"testOctocat1{{$randomInt}}\",\"email\":\"octocattest@github.com\"},\r\n    \"content\":\"bXkgbmV3IGZpbGUgY29udGVudHM=\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/filenew2.txt"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/test{{$randomInt}}.txt",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"contents",
+						"test{{$randomInt}}.txt"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "updatefilecontent",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"shavalue_updated = pm.response.json().content.sha\r",
+							"console.log(shavalue_updated)\r",
+							"pm.globals.set(\"shavalue_updated\",shavalue_updated)\r",
+							"\r",
+							"filename_updated = pm.response.json().content.name\r",
+							"console.log(filename_updated)\r",
+							"pm.globals.set(\"filename_updated\",filename_updated)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {
 					"accept": true
@@ -359,9 +527,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "PUT",
 				"header": [
@@ -369,18 +541,35 @@
 						"key": "Accept",
 						"value": "{{gitaccept}}",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{gitbearertoken}}",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"message\":\"updated new commit message via api\",\r\n    \"committer\":{\"name\":\"testOctocat0629\",\"email\":\"octocattest@github.com\"},\r\n    \"content\":\"bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz\",\r\n    \"sha\":\"{{shainjson}}\"\r\n}\r\n",
+					"raw": "{\r\n    \"message\":\"updated new commit message via api\",\r\n    \"committer\":{\"name\":\"testOctocat0629{{$randomInt}}\",\"email\":\"octocattest@github.com\"},\r\n    \"content\":\"bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz\",\r\n    \"sha\":\"{{shavalue}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/filenew2.txt"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/{{filename}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"contents",
+						"{{filename}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -401,9 +590,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "GET",
 				"header": [
@@ -413,7 +606,19 @@
 						"type": "text"
 					}
 				],
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/filenew1.txt"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/filenew1.txt",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"contents",
+						"filenew1.txt"
+					]
+				}
 			},
 			"response": []
 		},
@@ -422,9 +627,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "DELETE",
 				"header": [
@@ -436,25 +645,46 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"message\":\"updated new commit message via api\",\r\n    \"committer\":{\"name\":\"testOctocat0629\",\"email\":\"octocattest@github.com\"},\r\n    \"sha\":\"fb617c9e42866ca24d0ff8e0c2725048f6f9530c\"\r\n}",
+					"raw": "{\r\n    \"message\":\"updated new commit message via api\",\r\n    \"committer\":{\"name\":\"testOctocat0629\",\"email\":\"octocattest@github.com\"},\r\n    \"sha\":\"{{shavalue_updated}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/filenew2.txt"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/contents/{{filename_updated}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"contents",
+						"{{filename_updated}}"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "listrepotags",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "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"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
 				},
 				"method": "GET",
 				"header": [
@@ -464,7 +694,233 @@
 						"type": "text"
 					}
 				],
-				"url": "https://api.github.com/repos/{{Orggitowner}}/{{gitreponame}}/tags"
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/tags",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Createautolinkreferenceinrepo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"autolinkid = pm.response.json().id\r",
+							"console.log(autolinkid)\r",
+							"pm.globals.set(\"autolinkid\",autolinkid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"key_prefix\":\"test-\",\r\n    \"url_template\":\"https://example.com/TICKET?query=<num>\",\r\n    \"is_alphanumeric\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/autolinks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"autolinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getallrepotopics",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/topics",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"topics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getautoreferencelinks",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/autolinks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"autolinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteautolink",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/autolinks/{{autolinkid}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"autolinks",
+						"{{autolinkid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "replacrepotopics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"names\":[\"octocat\",\"atom\",\"electronics\",\"api\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{Orggitowner}}/{{gitreponame}}/topics",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{Orggitowner}}",
+						"{{gitreponame}}",
+						"topics"
+					]
+				}
 			},
 			"response": []
 		}
