@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.4 on win32)" generated="20231127 15:02:38.132" rpa="false" schemaversion="4">
+<suite id="s1" name="Testcases" source="C:\Users\Hp\PycharmProjects\RF_Indiabooks\demo_Bookdetailedview\Tests\Testcases.robot">
+<test id="s1-t1" name="User should be able to Land on Book details page" line="9">
+<kw name="Open FlipKart website" library="instructions">
+<kw name="Log" library="BuiltIn">
+<arg>------------Opening Flipkart in Chrome Browser------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:02:38.473" level="INFO">------------Opening Flipkart in Chrome Browser------------</msg>
+<status status="PASS" starttime="20231127 15:02:38.473" endtime="20231127 15:02:38.476"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231127 15:02:38.477" level="INFO">Opening browser 'chrome' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20231127 15:02:38.476" endtime="20231127 15:02:42.226"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231127 15:02:42.226" endtime="20231127 15:02:42.492"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:02:46.509" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20231127 15:02:42.493" endtime="20231127 15:02:46.509"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Close_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:02:46.510" level="INFO">Clicking element '//span[@role='button']'.</msg>
+<status status="PASS" starttime="20231127 15:02:46.509" endtime="20231127 15:02:46.593"/>
+</kw>
+<status status="PASS" starttime="20231127 15:02:38.472" endtime="20231127 15:02:46.594"/>
+</kw>
+<kw name="Search for any of your desired Mobile from ‘Mobiles’ section" library="instructions">
+<kw name="Log" library="BuiltIn">
+<arg>------------Selecting Mobiles category------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:02:46.595" level="INFO">------------Selecting Mobiles category------------</msg>
+<status status="PASS" starttime="20231127 15:02:46.595" endtime="20231127 15:02:46.595"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Category_count}</var>
+<arg>${Category_list}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231127 15:02:46.621" level="INFO">${Category_count} = 4</msg>
+<status status="PASS" starttime="20231127 15:02:46.595" endtime="20231127 15:02:46.621"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:02:51.629" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 15:02:46.622" endtime="20231127 15:02:51.629"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Category_count}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Category_name}</var>
+<arg>(${Category_list})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:02:51.672" level="INFO">${Category_name} = Grocery</msg>
+<status status="PASS" starttime="20231127 15:02:51.630" endtime="20231127 15:02:51.672"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Category_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:02:51.672" endtime="20231127 15:02:51.673"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${Category_name}&quot; == &quot;${expected_category}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${Category_list})[${i}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:02:51.673" endtime="20231127 15:02:51.673"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:02:51.674" endtime="20231127 15:02:51.674"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:02:51.673" endtime="20231127 15:02:51.674"/>
+</branch>
+<status status="PASS" starttime="20231127 15:02:51.673" endtime="20231127 15:02:51.674"/>
+</if>
+<status status="PASS" starttime="20231127 15:02:51.630" endtime="20231127 15:02:51.674"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Category_name}</var>
+<arg>(${Category_list})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:02:51.703" level="INFO">${Category_name} = Mobiles</msg>
+<status status="PASS" starttime="20231127 15:02:51.674" endtime="20231127 15:02:51.704"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Category_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:02:51.704" endtime="20231127 15:02:51.704"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${Category_name}&quot; == &quot;${expected_category}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${Category_list})[${i}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:02:51.705" level="INFO">Clicking element '((//div[@class='_3sdu8W emupdz']/a[@class='_1ch8e_']))[2]'.</msg>
+<status status="PASS" starttime="20231127 15:02:51.705" endtime="20231127 15:02:54.001"/>
+</kw>
+<break>
+<status status="PASS" starttime="20231127 15:02:54.002" endtime="20231127 15:02:54.002"/>
+</break>
+<status status="PASS" starttime="20231127 15:02:51.704" endtime="20231127 15:02:54.002"/>
+</branch>
+<status status="PASS" starttime="20231127 15:02:51.704" endtime="20231127 15:02:54.002"/>
+</if>
+<status status="PASS" starttime="20231127 15:02:51.674" endtime="20231127 15:02:54.003"/>
+</iter>
+<status status="PASS" starttime="20231127 15:02:51.629" endtime="20231127 15:02:54.003"/>
+</for>
+<status status="PASS" starttime="20231127 15:02:46.594" endtime="20231127 15:02:54.003"/>
+</kw>
+<kw name="Navigate to &quot;Electronics&quot; tab in mobiles section" library="instructions">
+<kw name="Log" library="BuiltIn">
+<arg>------------Selecting Electronics tab in Mobiles category------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:02:54.005" level="INFO">------------Selecting Electronics tab in Mobiles category------------</msg>
+<status status="PASS" starttime="20231127 15:02:54.004" endtime="20231127 15:02:54.005"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${mobile_category_count}</var>
+<arg>${mobile_sub_category_list}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231127 15:02:54.095" level="INFO">${mobile_category_count} = 7</msg>
+<status status="PASS" starttime="20231127 15:02:54.005" endtime="20231127 15:02:54.095"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile_category_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:02:54.096" endtime="20231127 15:02:54.096"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:02:59.104" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 15:02:54.097" endtime="20231127 15:02:59.104"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${mobile_category_count}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobile_category_name}</var>
+<arg>(${mobile_sub_category_list})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:02:59.134" level="INFO">${mobile_category_name} = Electronics</msg>
+<status status="PASS" starttime="20231127 15:02:59.105" endtime="20231127 15:02:59.134"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>(${mobile_sub_category_list})[${i}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:02:59.134" endtime="20231127 15:02:59.423"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile_category_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:02:59.424" endtime="20231127 15:02:59.424"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>"${mobile_category_name}" == "${select_categoryinmobile}"</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231127 15:02:59.425" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231127 15:02:59.425" endtime="20231127 15:02:59.425"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>(${mobile_sub_category_list})[${i}]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:02:59.425" endtime="20231127 15:02:59.426"/>
+</kw>
+<status status="PASS" starttime="20231127 15:02:59.105" endtime="20231127 15:02:59.426"/>
+</iter>
+<status status="PASS" starttime="20231127 15:02:59.104" endtime="20231127 15:02:59.426"/>
+</for>
+<status status="PASS" starttime="20231127 15:02:54.004" endtime="20231127 15:02:59.426"/>
+</kw>
+<kw name="Do not select first 5 mobiles from the list" library="instructions">
+<kw name="Log" library="BuiltIn">
+<arg>------------Selecting mobiles which are not in the range of 1 to 5------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:02:59.427" level="INFO">------------Selecting mobiles which are not in the range of 1 to 5------------</msg>
+<status status="PASS" starttime="20231127 15:02:59.427" endtime="20231127 15:02:59.427"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${mobile_count}</var>
+<arg>${diff_mobiles}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231127 15:02:59.449" level="INFO">${mobile_count} = 18</msg>
+<status status="PASS" starttime="20231127 15:02:59.427" endtime="20231127 15:02:59.449"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:02:59.450" endtime="20231127 15:02:59.451"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:03:04.462" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 15:02:59.451" endtime="20231127 15:03:04.462"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${n}</var>
+<value>6</value>
+<value>${mobile_count}</value>
+<iter>
+<var name="${n}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobiles_text}</var>
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:04.495" level="INFO">${mobiles_text} = OPPO</msg>
+<status status="PASS" starttime="20231127 15:03:04.463" endtime="20231127 15:03:04.495"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${mobiles_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:04.496" level="INFO">OPPO</msg>
+<status status="PASS" starttime="20231127 15:03:04.495" endtime="20231127 15:03:04.496"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobiles_text}&quot; == &quot;${expected_honor_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:04.496" endtime="20231127 15:03:04.496"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:04.497" endtime="20231127 15:03:04.497"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:04.496" endtime="20231127 15:03:04.497"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:04.496" endtime="20231127 15:03:04.497"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:04.463" endtime="20231127 15:03:04.497"/>
+</iter>
+<iter>
+<var name="${n}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobiles_text}</var>
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:04.526" level="INFO">${mobiles_text} = Apple</msg>
+<status status="PASS" starttime="20231127 15:03:04.497" endtime="20231127 15:03:04.527"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${mobiles_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:04.527" level="INFO">Apple</msg>
+<status status="PASS" starttime="20231127 15:03:04.527" endtime="20231127 15:03:04.527"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobiles_text}&quot; == &quot;${expected_honor_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:04.528" endtime="20231127 15:03:04.528"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:04.528" endtime="20231127 15:03:04.528"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:04.527" endtime="20231127 15:03:04.528"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:04.527" endtime="20231127 15:03:04.528"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:04.497" endtime="20231127 15:03:04.528"/>
+</iter>
+<iter>
+<var name="${n}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobiles_text}</var>
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:04.557" level="INFO">${mobiles_text} = Vivo</msg>
+<status status="PASS" starttime="20231127 15:03:04.529" endtime="20231127 15:03:04.557"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${mobiles_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:04.557" level="INFO">Vivo</msg>
+<status status="PASS" starttime="20231127 15:03:04.557" endtime="20231127 15:03:04.558"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobiles_text}&quot; == &quot;${expected_honor_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:04.558" endtime="20231127 15:03:04.558"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:04.558" endtime="20231127 15:03:04.559"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:04.558" endtime="20231127 15:03:04.559"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:04.558" endtime="20231127 15:03:04.559"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:04.528" endtime="20231127 15:03:04.559"/>
+</iter>
+<iter>
+<var name="${n}">9</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobiles_text}</var>
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:04.590" level="INFO">${mobiles_text} = Honor</msg>
+<status status="PASS" starttime="20231127 15:03:04.559" endtime="20231127 15:03:04.590"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${mobiles_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:04.591" level="INFO">Honor</msg>
+<status status="PASS" starttime="20231127 15:03:04.591" endtime="20231127 15:03:04.591"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobiles_text}&quot; == &quot;${expected_honor_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${diff_mobiles})[${n}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:04.593" level="INFO">Clicking element '(//div[@class='_1fwVde'][1]/a)[9]'.</msg>
+<status status="PASS" starttime="20231127 15:03:04.592" endtime="20231127 15:03:04.661"/>
+</kw>
+<break>
+<status status="PASS" starttime="20231127 15:03:04.661" endtime="20231127 15:03:04.662"/>
+</break>
+<status status="PASS" starttime="20231127 15:03:04.591" endtime="20231127 15:03:04.663"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:04.591" endtime="20231127 15:03:04.663"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:04.559" endtime="20231127 15:03:04.663"/>
+</iter>
+<status status="PASS" starttime="20231127 15:03:04.463" endtime="20231127 15:03:04.664"/>
+</for>
+<status status="PASS" starttime="20231127 15:02:59.426" endtime="20231127 15:03:04.664"/>
+</kw>
+<kw name="Try scrolling and search for the mobile and go to that specific mobile’s details page" library="instructions">
+<kw name="Log" library="BuiltIn">
+<arg>------------Selecting ${expected_mobile} Mobile from the list------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:04.668" level="INFO">------------Selecting Honor 90 5G (Emerald Green, 256 GB) Mobile from the list------------</msg>
+<status status="PASS" starttime="20231127 15:03:04.665" endtime="20231127 15:03:04.670"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5S</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:03:09.680" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 15:03:04.671" endtime="20231127 15:03:09.680"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${honor_mobile_count}</var>
+<arg>${honor_mobiles}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231127 15:03:09.702" level="INFO">${honor_mobile_count} = 24</msg>
+<status status="PASS" starttime="20231127 15:03:09.680" endtime="20231127 15:03:09.702"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${honor_mobile_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:03:09.703" endtime="20231127 15:03:09.703"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${cnt}</var>
+<value>1</value>
+<value>${honor_mobile_count}</value>
+<iter>
+<var name="${cnt}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobile}</var>
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:09.731" level="INFO">${mobile} = Honor 90 5G (Midnight Black, 512 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:09.704" endtime="20231127 15:03:09.731"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:03:09.731" endtime="20231127 15:03:09.732"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:03:09.732" endtime="20231127 15:03:10.013"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobile}&quot; == &quot;${expected_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:10.014" endtime="20231127 15:03:10.014"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:10.015" endtime="20231127 15:03:10.015"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:10.014" endtime="20231127 15:03:10.015"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:10.013" endtime="20231127 15:03:10.015"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:09.704" endtime="20231127 15:03:10.015"/>
+</iter>
+<iter>
+<var name="${cnt}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobile}</var>
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:10.045" level="INFO">${mobile} = Honor 90 5G (Diamond Silver, 256 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:10.016" endtime="20231127 15:03:10.045"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:03:10.045" endtime="20231127 15:03:10.046"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:03:10.046" endtime="20231127 15:03:10.331"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobile}&quot; == &quot;${expected_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:10.332" endtime="20231127 15:03:10.332"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:10.332" endtime="20231127 15:03:10.332"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:10.331" endtime="20231127 15:03:10.332"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:10.331" endtime="20231127 15:03:10.332"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:10.016" endtime="20231127 15:03:10.332"/>
+</iter>
+<iter>
+<var name="${cnt}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobile}</var>
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:10.385" level="INFO">${mobile} = Honor 90 5G (Emerald Green, 512 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:10.333" endtime="20231127 15:03:10.385"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:03:10.386" endtime="20231127 15:03:10.386"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:03:10.386" endtime="20231127 15:03:10.678"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobile}&quot; == &quot;${expected_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:10.679" endtime="20231127 15:03:10.679"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:10.679" endtime="20231127 15:03:10.679"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:10.679" endtime="20231127 15:03:10.679"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:10.679" endtime="20231127 15:03:10.680"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:10.332" endtime="20231127 15:03:10.680"/>
+</iter>
+<iter>
+<var name="${cnt}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobile}</var>
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:10.710" level="INFO">${mobile} = Honor 9 Lite (Glacier Grey, 32 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:10.680" endtime="20231127 15:03:10.710"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:03:10.710" endtime="20231127 15:03:10.711"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:03:10.711" endtime="20231127 15:03:10.997"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobile}&quot; == &quot;${expected_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 15:03:10.998" endtime="20231127 15:03:10.998"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 15:03:10.998" endtime="20231127 15:03:10.998"/>
+</break>
+<status status="NOT RUN" starttime="20231127 15:03:10.998" endtime="20231127 15:03:10.999"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:10.998" endtime="20231127 15:03:10.999"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:10.680" endtime="20231127 15:03:10.999"/>
+</iter>
+<iter>
+<var name="${cnt}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mobile}</var>
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:11.028" level="INFO">${mobile} = Honor 90 5G (Emerald Green, 256 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:10.999" endtime="20231127 15:03:11.028"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mobile}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 15:03:11.029" endtime="20231127 15:03:11.029"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:03:11.029" endtime="20231127 15:03:11.328"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobile}&quot; == &quot;${expected_mobile}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${honor_mobiles})[${cnt}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:11.330" level="INFO">Clicking element '(//div[@class='_4rR01T'])[5]'.</msg>
+<status status="PASS" starttime="20231127 15:03:11.329" endtime="20231127 15:03:11.413"/>
+</kw>
+<break>
+<status status="PASS" starttime="20231127 15:03:11.414" endtime="20231127 15:03:11.415"/>
+</break>
+<status status="PASS" starttime="20231127 15:03:11.329" endtime="20231127 15:03:11.417"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:11.329" endtime="20231127 15:03:11.418"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:10.999" endtime="20231127 15:03:11.418"/>
+</iter>
+<status status="PASS" starttime="20231127 15:03:09.703" endtime="20231127 15:03:11.418"/>
+</for>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${mobile}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231127 15:03:11.419" level="INFO">${mobile} = Honor 90 5G (Emerald Green, 256 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:11.418" endtime="20231127 15:03:11.419"/>
+</kw>
+<status status="PASS" starttime="20231127 15:03:04.664" endtime="20231127 15:03:11.419"/>
+</kw>
+<kw name="Click on ADD TO CART button" library="instructions">
+<kw name="Log" library="BuiltIn">
+<arg>------------Clicking on Add to Cart Button------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:11.420" level="INFO">------------Clicking on Add to Cart Button------------</msg>
+<status status="PASS" starttime="20231127 15:03:11.420" endtime="20231127 15:03:11.420"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>New</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231127 15:03:11.420" endtime="20231127 15:03:11.436"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:03:16.451" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 15:03:11.437" endtime="20231127 15:03:16.451"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Add_to_Cart}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231127 15:03:16.452" endtime="20231127 15:03:16.767"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Add_to_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:16.768" level="INFO">Clicking element '//button[@class='_2KpZ6l _2U9uOA _3v1-ww']'.</msg>
+<status status="PASS" starttime="20231127 15:03:16.768" endtime="20231127 15:03:16.825"/>
+</kw>
+<status status="PASS" starttime="20231127 15:03:11.419" endtime="20231127 15:03:16.826"/>
+</kw>
+<kw name="Verify if the the Mobile which we added is available in the list" library="instructions">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 15:03:21.833" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 15:03:16.827" endtime="20231127 15:03:21.833"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mob_text}</var>
+<arg>${mobile_in_addcart}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:21.867" level="INFO">${mob_text} = Honor 90 5G (Emerald Green, 256 GB)</msg>
+<status status="PASS" starttime="20231127 15:03:21.833" endtime="20231127 15:03:21.867"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${mobile}&quot; == &quot;${mob_text}&quot;">
+<kw name="Log" library="BuiltIn">
+<arg>---------"Mobile Matching and Available in the list and Click on Proceed to checkout"-------------</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231127 15:03:21.868" level="INFO">---------"Mobile Matching and Available in the list and Click on Proceed to checkout"-------------</msg>
+<status status="PASS" starttime="20231127 15:03:21.868" endtime="20231127 15:03:21.869"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${proceed_to_checkout}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231127 15:03:21.869" level="INFO">Clicking button '//button[@class='_2KpZ6l _2ObVJD _3AWRsL']'.</msg>
+<status status="PASS" starttime="20231127 15:03:21.869" endtime="20231127 15:03:23.070"/>
+</kw>
+<status status="PASS" starttime="20231127 15:03:21.868" endtime="20231127 15:03:23.070"/>
+</branch>
+<status status="PASS" starttime="20231127 15:03:21.868" endtime="20231127 15:03:23.070"/>
+</if>
+<status status="PASS" starttime="20231127 15:03:16.826" endtime="20231127 15:03:23.070"/>
+</kw>
+<kw name="Closing the Browser opened" library="instructions">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231127 15:03:23.071" endtime="20231127 15:03:25.284"/>
+</kw>
+<status status="PASS" starttime="20231127 15:03:23.070" endtime="20231127 15:03:25.284"/>
+</kw>
+<status status="PASS" starttime="20231127 15:02:38.471" endtime="20231127 15:03:25.284"/>
+</test>
+<status status="PASS" starttime="20231127 15:02:38.136" endtime="20231127 15:03:25.285"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
